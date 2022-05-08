@@ -5,6 +5,13 @@ function powJob(event) {
   return Math.pow(input, power);
 }
 
+async function sendNotificationJob(event) {
+  const [to, message] = event.args;
+  console.log(`Sending email to: ${to}, message: ${message}`);
+  await promisefy(() => null, []);
+  console.log(`Email sent!`);
+}
+
 module.exports = {
   async powLambda(input, power) {
     return await promisefy(powJob, [
@@ -12,5 +19,10 @@ module.exports = {
         args: [input, power],
       },
     ]);
+  },
+  async sendNotificationLambda(to, message) {
+    return await sendNotificationJob({
+      args: [to, message],
+    });
   },
 };
