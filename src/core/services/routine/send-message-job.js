@@ -1,7 +1,7 @@
 const {
   MessageRepository,
 } = require("../../../infraestructure/database/repositories/message-repository");
-const { Job } = require("../../models/job");
+const { Job } = require("../models/job");
 const { AsyncProcessorService } = require("../async-processor-service");
 
 async function sendMessageJob() {
