@@ -9,8 +9,8 @@ class AwsLambdaService {
   runJob(name) {
     console.log(`LambdaService | Running job ${name}`);
     const job = this.jobs[name];
-    setInterval(async () => {
-      await job.run(job.args);
+    setInterval(() => {
+      job.run(job.args);
     }, job.interval);
   }
 }

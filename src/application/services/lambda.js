@@ -10,7 +10,7 @@ class LambdaService {
   static jobs = [SendMessageJob];
 
   static async start() {
-    console.log("----- Starting Lambda Service -----");
+    console.log("----- Iniciando serviço Lambda -----");
     for (const job of LambdaService.jobs) {
       LambdaService.manager.addJob(job);
       LambdaService.manager.runJob(job.name);
